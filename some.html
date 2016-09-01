@@ -1,10 +1,142 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <style>
+      .zappy {color:purple; background:yellow}
+      .wow {color:blue; background:lightgrey}
+
+      a:link {background:yellow}
+      a:visited {background:pink}
+      a:hover {background:lightgreen}
+      a:active {background:purple}
+      li:empty {background:brown}
+    </style>
   </head>
   <body>
     <input type="checkbox" value="remember-me" id="remember-me"> 记住账号和密码
     <button class="btn" type="submit">登 录</button>
+
+    <!-- list -->
+    <!-- start is begin number, reversed: start is biggest, type A use letter-->
+    <ol start="10" reversed type="A">
+        <li>In this year I was born...</li>
+        <li>In this year I learned to walk...</li>
+        <li>In this year I learned to program...</li>
+        <li>In this year I learned SPA techniques...</li>
+    </ol>
+
+    <!-- funny marks -->
+    <p>It's dangerous to use <big>big</big> because it isn't part of HTML 5!</p>
+    <p>I'm embarrassed to say it loudly so here it is: <small>I love you!</small></p>
+    <p>x<sub>1</sub><sup>2</sup> + x<sub>2</sub><sup>3</sup> equals 68</p>
+    <p><del>astonishingly</del></p>
+    <p><mark>millionaire</mark></p>
+
+    <!-- <video/audio>: srcattribute autoplay attribute
+        controls attribute loop attribute
+        alt attribute -->
+
+    <p class="wow">My first paragraph</p>
+    <p class="zappy">My second paragraph</p>
+
+    <!-- Pseudo-classes are classes with some kind of 'intelligence' -->
+    <a href="http://www.cnn.com">CNN</a>
+    <a href="http://www.twitter.com">Twitter</a>
+    <ol>
+        <li>One</li>
+        <li>Two</li>
+        <li>Three</li>
+        <li></li>
+    </ol>
+
+    <!--  -->
+    <p>
+      <textarea rows="3" cols="60" name="feedback" >
+        Please enter your text here
+      </textarea>
+    </p>
+    <p>
+      <!-- I'd like use ajax to resquest server, but form give many userful action can do. Replace form 'action' attribute by ajax is great!-->
+      <form>
+          Please enter your name. <br>
+          <input type="text" name="feedback"> <br> <br>
+          Please select each of the following that you have. <br>
+          <input type="checkbox" name="items" value="car">Car <br>
+          <input type="checkbox" name="items" value="teddy bear">Teddy bear <br>
+          <input type="checkbox" name="items" value="toothbrush">Toothbrush <br> <br>
+          Please indicate your intelligence level. <br>
+          <input type="radio" name="iq" value="high">High <br>
+          <input type="radio" name="iq" value="medium" checked>Medium <br>
+          <input type="radio" name="iq" value="low">Low <br> <br>
+
+          <p>What is the secret password?</p>
+          <input type="password" name="userpassword"> <br>
+          <input type="submit" value="Send">
+
+          <p>What city would you like to go to?</p>
+          <select name="cities">
+                  <option value="hk">Hong Kong</option>
+                  <option value="vc">Vancouver</option>
+                  <option value="sf">San Francisco</option>
+          </select>
+
+          <p>Please fill in the following information:</p>
+          <label for="firstname">First name:</label>
+          <input type="text" name="firstname" value="Dave" autofocus>
+          <br>
+          <label for="lastname">Last name:</label>
+          <input type="text" name="lastname" placeholder="Your last name goes here">
+          <br>
+          <label for="age">Age:</label>
+          <!-- required is give a tips to fill it -->
+          <input type="text" name="age" required>
+          <br>
+          <input type="submit" value="Submit">
+      </form>
+    </p>
+
+    <!-- upload file -->
+    <div>
+        <form method="post" enctype="multipart/form­data"
+            action="http://ihome.ust.hk/~rossiter/cgi­bin/show_everything.php">
+            <p>Select the file you want to upload</p>
+            <input type="file" name="fileToUpload">
+            <p>Press this button to send it</p>
+            <input type="submit" value="Upload the file">
+        </form>
+    </div>
+
+    <div>
+        <h2>NEW HTML5 INPUT ELEMENTS</h2>
+        <label for="age">Your age:</label>
+        <input type="number" min="0" max="99" step="1" value="18" name="age" required><br
+        <label for="birthday">Your birthday:</label>
+        <input type="date" name="birthday"><br>
+        <label for="wakeup">You want to wake up at:</label>
+        <input type="time" name="wakeup"><br>
+        <label for="color">Your favorite color:</label>
+        <input type="color" name="color"> <br>
+        <label for="mood">Your mood:</label>
+        Bad <input type="range" min="0" max="100" step="5" value="50" name="mood"> Good<b
+        <input type="submit" value="Submit!">
+    </div>
+
+    <div>
+        <h2>Grouping things <b>fieldset</b> Giving a title <b>legend</b></h2>
+        <!-- <form> -->
+              <fieldset>
+                      <legend>Personal Information</legend>
+                      First name? <input type="text" name="firstName"> <br>
+                      Last name? <input type="text" name="lastName"> <br>
+              </fieldset> <br>
+              <fieldset>
+                      <legend>Favourite Things</legend>
+                      Favourite cartoon? <input type="text" name="favCartoon"> <br>
+                      Favourite pizza? <input type="text" name="lastName"> <br>
+              </fieldset> <br>
+              <!-- <input type="submit" value="Send"> -->
+      <!-- </form> -->
+    </div>
   </body>
 
   <script src="http://cdn.bootcss.com/jquery/3.1.0/jquery.js"></script>
